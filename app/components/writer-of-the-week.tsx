@@ -8,14 +8,16 @@ import { ArrowRight } from "lucide-react"
 import { getCurrentWeekWriter, getNextWeekWriter } from "../data/writers-database"
 
 export function WriterOfTheWeek() {
-  const { getFeaturedWriter } = useAuth()
+  const {} = useAuth()
   const [writer, setWriter] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
 
   useEffect(() => {
     try {
+      console.log("Fetching current week writer...")
       const currentWriter = getCurrentWeekWriter()
+      console.log("Current writer:", currentWriter)
       setWriter(currentWriter)
     } catch (err) {
       console.error("Error fetching current week writer:", err)
