@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'Algerian';
+  src: url('/fonts/ALGER.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.algerian-font {
+  font-family: 'Algerian', sans-serif;
+}
