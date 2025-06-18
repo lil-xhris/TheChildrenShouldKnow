@@ -1,67 +1,87 @@
-'use client'
-
-import { useState } from 'react'
-import { Header } from '../components/header'
-import { Footer } from '../components/footer'
-import { Upload, Video } from 'lucide-react'
-
 export default function Videos() {
-  const [videos, setVideos] = useState<{ name: string; url: string }[]>([])
-
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0]
-    if (file) {
-      const url = URL.createObjectURL(file)
-      setVideos([...videos, { name: file.name, url }])
-    }
-  }
-
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
-      <main className="flex-grow bg-gray-100 p-4">
-        <div className="container mx-auto">
-          <h1 className="text-3xl font-bold mb-6 text-center">Video Section</h1>
-          
-          <div className="mb-8">
-            <label htmlFor="video-upload" className="flex items-center justify-center w-full h-32 px-4 transition bg-white border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-400 focus:outline-none">
-              <span className="flex items-center space-x-2">
-                <Upload className="w-6 h-6 text-gray-600" />
-                <span className="font-medium text-gray-600">Click to upload video</span>
-              </span>
-              <input
-                id="video-upload"
-                type="file"
-                className="hidden"
-                accept="video/*"
-                onChange={handleFileChange}
-              />
-            </label>
-          </div>
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 to-blue-900">
+      {/* Header */}
+      <header className="p-6 border-b border-white/20">
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
+          <a href="/" className="text-2xl font-bold text-white">
+            WRITERS
+          </a>
+          <nav className="hidden md:flex space-x-6">
+            <a href="/" className="text-white hover:text-purple-300">
+              Home
+            </a>
+            <a href="/writers" className="text-white hover:text-purple-300">
+              Writers
+            </a>
+            <a href="/poetry" className="text-white hover:text-purple-300">
+              Poetry
+            </a>
+            <a href="/videos" className="text-purple-300">
+              Videos
+            </a>
+          </nav>
+        </div>
+      </header>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {videos.map((video, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
-                <video controls className="w-full h-48 object-cover">
-                  <source src={video.url} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg mb-2 truncate">{video.name}</h3>
-                </div>
+      <main className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-5xl font-bold text-center bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-8">
+            Educational Videos
+          </h1>
+          <p className="text-xl text-center text-gray-300 mb-12 max-w-3xl mx-auto">
+            Discover inspiring content that nurtures young minds and promotes the power of writing and education.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Video 1 */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20">
+              <div className="relative h-64 bg-gray-800 flex items-center justify-center">
+                <span className="text-6xl">🎬</span>
+                <div className="absolute top-4 right-4 bg-black/60 text-white px-2 py-1 rounded text-sm">5:32</div>
               </div>
-            ))}
-          </div>
-
-          {videos.length === 0 && (
-            <div className="text-center text-gray-500 mt-8">
-              <Video className="w-16 h-16 mx-auto mb-4" />
-              <p>No videos uploaded yet. Upload a video to get started!</p>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-white mb-2">The Children Should Know - Movement Introduction</h3>
+                <p className="text-gray-300 mb-4">
+                  This movement is a team of children, teenagers and professionals to talk about issues affecting the
+                  children.
+                </p>
+                <a
+                  href="https://www.facebook.com/share/v/1HzTTqJ7zX/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium"
+                >
+                  Watch on Facebook →
+                </a>
+              </div>
             </div>
-          )}
+
+            {/* Video 2 */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20">
+              <div className="relative h-64 bg-gray-800 flex items-center justify-center">
+                <span className="text-6xl">🎬</span>
+                <div className="absolute top-4 right-4 bg-black/60 text-white px-2 py-1 rounded text-sm">7:45</div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-white mb-2">Building Tomorrow's Leaders</h3>
+                <p className="text-gray-300 mb-4">
+                  Empowering young minds through education and creative expression. Join us in creating a future we'll
+                  all be proud of.
+                </p>
+                <a
+                  href="https://www.facebook.com/share/v/14w3QLwaQL/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium"
+                >
+                  Watch on Facebook →
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
-      <Footer />
     </div>
   )
 }

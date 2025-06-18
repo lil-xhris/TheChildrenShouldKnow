@@ -13,7 +13,7 @@ export interface WriterData {
   era: string
   quote: string
   lesson: string
-  weekNumber: number // Which week of the year this writer should be featured
+  weekNumber: number
 }
 
 export const WRITERS_DATABASE: WriterData[] = [
@@ -122,7 +122,7 @@ export const WRITERS_DATABASE: WriterData[] = [
     majorWorks: ["I Know Why the Caged Bird Sings", "On the Pulse of Morning", "Phenomenal Woman"],
     awards: ["Presidential Medal of Freedom", "Over 50 honorary degrees"],
     bio: "Maya Angelou was an American poet, memoirist, and civil rights activist known for her series of seven autobiographies.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/b/b4/Angelou_at_Clinton_inauguration.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/be/Maya_Angelou_visits_YCP_College_%28cropped%29.jpg",
     isReligious: true,
     era: "20th Century American (1928-2014)",
     quote: "There is no greater agony than bearing an untold story inside you.",
@@ -179,7 +179,7 @@ export const WRITERS_DATABASE: WriterData[] = [
     majorWorks: ["Things Fall Apart", "No Longer at Ease", "Arrow of God"],
     awards: ["Man Booker International Prize (2007)"],
     bio: "Chinua Achebe was a Nigerian novelist, poet, professor, and critic who is regarded as the dominant figure of modern African literature.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Chinua_Achebe_-_Buffalo_25Sep2008.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Chinua_Achebe_-_Buffalo_25Sep2008.jpg",
     isReligious: false,
     era: "20th-21st Century African (1930-2013)",
     quote: "Until the lions have their own historians, the history of the hunt will always glorify the hunter.",
@@ -206,7 +206,6 @@ export const WRITERS_DATABASE: WriterData[] = [
       "Tagore teaches us about universal humanism, the synthesis of Eastern and Western thought, and the power of education.",
     weekNumber: 10,
   },
-  // Continue with more writers...
   // Week 11
   {
     id: "writer_011",
@@ -369,7 +368,8 @@ export const WRITERS_DATABASE: WriterData[] = [
     majorWorks: ["Kindred", "Parable of the Sower", "Bloodchild", "The Patternmaster series"],
     awards: ["Hugo Award", "Nebula Award", "MacArthur Fellowship"],
     bio: "Octavia Butler was an American science fiction author who was one of the first African-American women to gain recognition in the genre.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Octavia_Butler_at_book_signing.jpg",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/3/3f/Octavia_E._Butler_at_the_2005_Brooklyn_Book_Festival.jpg",
     isReligious: false,
     era: "Contemporary American (1947-2006)",
     quote: "All that you touch you change. All that you change changes you.",
@@ -395,9 +395,6 @@ export const WRITERS_DATABASE: WriterData[] = [
     lesson: "Gibran teaches us about spiritual wisdom, the unity of all religions, and the beauty of the human soul.",
     weekNumber: 20,
   },
-  // Continue adding more writers up to 100...
-  // I'll add a few more key ones to demonstrate the pattern
-
   // Week 21
   {
     id: "writer_021",
@@ -417,7 +414,6 @@ export const WRITERS_DATABASE: WriterData[] = [
       "Hughes teaches us about the African American experience, the power of dreams, and the rhythm of jazz in poetry.",
     weekNumber: 21,
   },
-
   // Week 22
   {
     id: "writer_022",
@@ -437,7 +433,6 @@ export const WRITERS_DATABASE: WriterData[] = [
       "De Beauvoir teaches us about women's liberation, existential freedom, and the social construction of gender.",
     weekNumber: 22,
   },
-
   // Week 23
   {
     id: "writer_023",
@@ -457,7 +452,6 @@ export const WRITERS_DATABASE: WriterData[] = [
       "Soyinka teaches us about African identity, the fight against oppression, and the fusion of traditional and modern cultures.",
     weekNumber: 23,
   },
-
   // Week 24
   {
     id: "writer_024",
@@ -477,7 +471,6 @@ export const WRITERS_DATABASE: WriterData[] = [
       "Rilke teaches us about solitude, spiritual growth, and the artist's relationship with beauty and suffering.",
     weekNumber: 24,
   },
-
   // Week 25
   {
     id: "writer_025",
@@ -497,7 +490,6 @@ export const WRITERS_DATABASE: WriterData[] = [
       "Allende teaches us about the strength of women, family history, and the magical elements in everyday life.",
     weekNumber: 25,
   },
-
   // Week 26
   {
     id: "writer_026",
@@ -516,7 +508,6 @@ export const WRITERS_DATABASE: WriterData[] = [
     lesson: "Homer teaches us about heroism, the human condition, and the power of storytelling to preserve culture.",
     weekNumber: 26,
   },
-
   // Week 27
   {
     id: "writer_027",
@@ -535,7 +526,6 @@ export const WRITERS_DATABASE: WriterData[] = [
     lesson: "Confucius teaches us about moral character, social harmony, and the importance of education.",
     weekNumber: 27,
   },
-
   // Week 28
   {
     id: "writer_028",
@@ -555,7 +545,6 @@ export const WRITERS_DATABASE: WriterData[] = [
     lesson: "Sophocles teaches us about fate, free will, and the consequences of human actions.",
     weekNumber: 28,
   },
-
   // Week 29
   {
     id: "writer_029",
@@ -574,7 +563,6 @@ export const WRITERS_DATABASE: WriterData[] = [
     lesson: "Lao Tzu teaches us about simplicity, naturalness, and living in harmony with the Tao.",
     weekNumber: 29,
   },
-
   // Week 30
   {
     id: "writer_030",
@@ -594,7 +582,6 @@ export const WRITERS_DATABASE: WriterData[] = [
     lesson: "Chaucer teaches us about human nature, social satire, and the diversity of medieval life.",
     weekNumber: 30,
   },
-
   // Week 31
   {
     id: "writer_031",
@@ -614,7 +601,6 @@ export const WRITERS_DATABASE: WriterData[] = [
     lesson: "Hafez teaches us about love, divine intoxication, and the beauty of the Persian language.",
     weekNumber: 31,
   },
-
   // Week 32
   {
     id: "writer_032",
@@ -634,7 +620,6 @@ export const WRITERS_DATABASE: WriterData[] = [
       "Murasaki Shikibu teaches us about courtly life, human relationships, and the subtleties of Japanese culture.",
     weekNumber: 32,
   },
-
   // Week 33
   {
     id: "writer_033",
@@ -653,7 +638,6 @@ export const WRITERS_DATABASE: WriterData[] = [
     lesson: "Cervantes teaches us about idealism, the power of imagination, and the complexities of human nature.",
     weekNumber: 33,
   },
-
   // Week 34
   {
     id: "writer_034",
@@ -673,7 +657,6 @@ export const WRITERS_DATABASE: WriterData[] = [
     lesson: "Montaigne teaches us about self-reflection, skepticism, and the importance of individual judgment.",
     weekNumber: 34,
   },
-
   // Week 35
   {
     id: "writer_035",
@@ -693,7 +676,6 @@ export const WRITERS_DATABASE: WriterData[] = [
     lesson: "Voltaire teaches us about reason, tolerance, and the importance of fighting for freedom of expression.",
     weekNumber: 35,
   },
-
   // Week 36
   {
     id: "writer_036",
@@ -714,7 +696,6 @@ export const WRITERS_DATABASE: WriterData[] = [
       "Rousseau teaches us about the social contract, the importance of education, and the corrupting influence of society.",
     weekNumber: 36,
   },
-
   // Week 37
   {
     id: "writer_037",
@@ -735,7 +716,6 @@ export const WRITERS_DATABASE: WriterData[] = [
       "Dickens teaches us about social injustice, the importance of compassion, and the resilience of the human spirit.",
     weekNumber: 37,
   },
-
   // Week 38
   {
     id: "writer_038",
@@ -755,7 +735,6 @@ export const WRITERS_DATABASE: WriterData[] = [
       "Hugo teaches us about social justice, the power of love, and the importance of fighting for a better world.",
     weekNumber: 38,
   },
-
   // Week 39
   {
     id: "writer_039",
@@ -775,7 +754,6 @@ export const WRITERS_DATABASE: WriterData[] = [
     lesson: "Whitman teaches us about individualism, democracy, and the beauty of the natural world.",
     weekNumber: 39,
   },
-
   // Week 40
   {
     id: "writer_040",
@@ -796,7 +774,6 @@ export const WRITERS_DATABASE: WriterData[] = [
     lesson: "Thoreau teaches us about self-reliance, simple living, and the importance of resisting unjust laws.",
     weekNumber: 40,
   },
-
   // Week 41
   {
     id: "writer_041",
@@ -815,7 +792,6 @@ export const WRITERS_DATABASE: WriterData[] = [
     lesson: "Hemingway teaches us about courage, resilience, and the importance of facing adversity with grace.",
     weekNumber: 41,
   },
-
   // Week 42
   {
     id: "writer_042",
@@ -836,7 +812,6 @@ export const WRITERS_DATABASE: WriterData[] = [
     lesson: "Kafka teaches us about alienation, bureaucracy, and the absurdity of modern life.",
     weekNumber: 42,
   },
-
   // Week 43
   {
     id: "writer_043",
@@ -856,7 +831,6 @@ export const WRITERS_DATABASE: WriterData[] = [
     lesson: "Proust teaches us about memory, the passage of time, and the complexities of human consciousness.",
     weekNumber: 43,
   },
-
   // Week 44
   {
     id: "writer_044",
@@ -876,7 +850,6 @@ export const WRITERS_DATABASE: WriterData[] = [
       "Joyce teaches us about the complexities of human experience, the power of language, and the search for identity.",
     weekNumber: 44,
   },
-
   // Week 45
   {
     id: "writer_045",
@@ -898,7 +871,6 @@ export const WRITERS_DATABASE: WriterData[] = [
       "Rushdie teaches us about the complexities of identity, the clash of cultures, and the power of storytelling.",
     weekNumber: 45,
   },
-
   // Week 46
   {
     id: "writer_046",
@@ -919,7 +891,6 @@ export const WRITERS_DATABASE: WriterData[] = [
       "Atwood teaches us about the dangers of totalitarianism, the importance of environmentalism, and the power of women's voices.",
     weekNumber: 46,
   },
-
   // Week 47
   {
     id: "writer_047",
@@ -940,7 +911,6 @@ export const WRITERS_DATABASE: WriterData[] = [
       "Coelho teaches us about following our dreams, listening to our hearts, and the importance of spiritual journeys.",
     weekNumber: 47,
   },
-
   // Week 48
   {
     id: "writer_048",
@@ -959,7 +929,6 @@ export const WRITERS_DATABASE: WriterData[] = [
     lesson: "Aquinas teaches us about faith, reason, and the relationship between God and humanity.",
     weekNumber: 48,
   },
-
   // Week 49
   {
     id: "writer_049",
@@ -979,7 +948,6 @@ export const WRITERS_DATABASE: WriterData[] = [
       "Kabir teaches us about the unity of all religions, the importance of inner experience, and the rejection of dogma.",
     weekNumber: 49,
   },
-
   // Week 50
   {
     id: "writer_050",
@@ -1000,44 +968,45 @@ export const WRITERS_DATABASE: WriterData[] = [
       "Teresa of Ávila teaches us about prayer, spiritual growth, and the importance of surrendering to God's will.",
     weekNumber: 50,
   },
-
   // Week 51
   {
     id: "writer_051",
-    name: "Chinua Achebe",
-    birthDate: "1930-11-16",
-    deathDate: "2013-03-21",
+    name: "Chimamanda Ngozi Adichie",
+    birthDate: "1977-09-15",
+    deathDate: null,
     nationality: "Nigerian",
-    genre: ["Postcolonial Literature", "Novel", "Essay"],
-    majorWorks: ["Things Fall Apart", "No Longer at Ease", "Arrow of God"],
-    awards: ["Man Booker International Prize (2007)"],
-    bio: "Chinua Achebe was a Nigerian novelist, poet, professor, and critic who is regarded as the dominant figure of modern African literature.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Chinua_Achebe_-_Buffalo_25Sep2008.jpg",
+    genre: ["Novel", "Short Story", "Feminist Literature"],
+    majorWorks: ["Half of a Yellow Sun", "Americanah", "Purple Hibiscus"],
+    awards: ["Orange Prize for Fiction", "MacArthur Fellowship"],
+    bio: "Chimamanda Ngozi Adichie is a Nigerian writer whose works include novels, short stories and nonfiction. She was described in The Times Literary Supplement as 'the most prominent' of a 'procession of critically acclaimed young anglophone authors' of African fiction.",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Chimamanda_Ngozi_Adichie_2009.jpg/440px-Chimamanda_Ngozi_Adichie_2009.jpg",
     isReligious: false,
-    era: "20th-21st Century African (1930-2013)",
-    quote: "Until the lions have their own historians, the history of the hunt will always glorify the hunter.",
+    era: "Contemporary African (1977-present)",
+    quote:
+      "The single story creates stereotypes, and the problem with stereotypes is not that they are untrue, but that they are incomplete.",
     lesson:
-      "Achebe teaches us about the impact of colonialism and the importance of telling our own stories from our own perspective.",
+      "Adichie teaches us about the danger of single stories, the complexity of identity, and the importance of diverse narratives.",
     weekNumber: 51,
   },
-
   // Week 52
   {
     id: "writer_052",
-    name: "Rabindranath Tagore",
-    birthDate: "1861-05-07",
-    deathDate: "1941-08-07",
-    nationality: "Indian (Bengali)",
-    genre: ["Poetry", "Novel", "Drama", "Philosophy"],
-    majorWorks: ["Gitanjali", "The Home and the World", "Gora"],
-    awards: ["Nobel Prize in Literature (1913) - First non-European to win"],
-    bio: "Rabindranath Tagore was a Bengali polymath who reshaped Bengali literature and music as well as Indian art with Contextual Modernism.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Rabindranath_Tagore_in_1909.jpg",
-    isReligious: true,
-    era: "19th-20th Century Indian Renaissance (1861-1941)",
-    quote: "Don't limit a child to your own learning, for they were born in another time.",
+    name: "Ben Okri",
+    birthDate: "1959-03-15",
+    deathDate: null,
+    nationality: "Nigerian-British",
+    genre: ["Novel", "Poetry", "Magical Realism"],
+    majorWorks: ["The Famished Road", "Songs of Enchantment", "Astonishing the Gods"],
+    awards: ["Booker Prize (1991)", "OBE"],
+    bio: "Ben Okri is a Nigerian-British author. Okri is considered one of the foremost African authors in the post-modern and post-colonial traditions, and has been compared favourably to authors such as Salman Rushdie and Gabriel García Márquez.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Ben_Okri_2016.jpg/440px-Ben_Okri_2016.jpg",
+    isReligious: false,
+    era: "Contemporary African (1959-present)",
+    quote:
+      "The most authentic thing about us is our capacity to create, to overcome, to endure, to transform, to love and to be greater than our suffering.",
     lesson:
-      "Tagore teaches us about universal humanism, the synthesis of Eastern and Western thought, and the power of education.",
+      "Okri teaches us about the power of storytelling, the intersection of reality and dreams, and the resilience of the human spirit.",
     weekNumber: 52,
   },
 ]

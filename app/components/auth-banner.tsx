@@ -20,6 +20,7 @@ import {
   Award,
 } from "lucide-react"
 import { StreakBadge } from "./streak-badge"
+import { Button } from "@/components/ui/button"
 
 export function AuthBanner() {
   const { user, logout, getNotifications, markNotificationAsRead, markAllNotificationsAsRead } = useAuth()
@@ -69,7 +70,30 @@ export function AuthBanner() {
 
   const unreadCount = notifications.filter((n) => !n.read).length
 
-  if (!user) return null
+  if (!user)
+    return (
+      <div className="bg-blue-600 text-white py-2">
+        <div className="container mx-auto px-4 flex justify-center items-center">
+          <p className="text-sm mr-4">Join our community of writers and storytellers!</p>
+          <div className="flex space-x-2">
+            <Link href="/signup">
+              <Button size="sm" variant="secondary">
+                Sign Up
+              </Button>
+            </Link>
+            <Link href="/login">
+              <Button
+                size="sm"
+                variant="outline"
+                className="text-white border-white hover:bg-white hover:text-blue-600"
+              >
+                Sign In
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    )
 
   return (
     <div className="bg-white border-b shadow-sm py-2">

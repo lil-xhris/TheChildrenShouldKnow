@@ -1,12 +1,10 @@
 import type React from "react"
 import type { Metadata } from "next"
 import "./globals.css"
-import "./styles/fonts.css"
-import { AuthProvider } from "./context/auth-context"
 
 export const metadata: Metadata = {
-  title: "WRITERS",
-  description: "Unleashing creativity through the power of words",
+  title: "WRITERS - Unleashing Creativity Through Words",
+  description: "Discover the world's greatest writers and explore timeless literature.",
     generator: 'v0.dev'
 }
 
@@ -17,9 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <AuthProvider>{children}</AuthProvider>
-      </body>
+      <body>{children}</body>
     </html>
   )
 }

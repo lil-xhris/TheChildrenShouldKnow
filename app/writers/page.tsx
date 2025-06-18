@@ -1,153 +1,93 @@
-"use client"
-
-import Image from "next/image"
-import { Header } from "../components/header"
-import { Footer } from "../components/footer"
-import { ExternalLink, Heart, MessageSquare } from "lucide-react"
-import { useState } from "react"
-
-type Writer = {
-  id: string
-  name: string
-  years: string
-  bio: string
-  notableWorks: string[]
-  imageUrl: string
-  likes: number
-  liked: boolean
-  comments: number
-}
-
 export default function Writers() {
-  const [writers, setWriters] = useState<Writer[]>([
+  const writers = [
     {
-      id: "1",
+      name: "William Shakespeare",
+      years: "1564-1616",
+      nationality: "English",
+      bio: "English poet, playwright, and actor, widely regarded as the greatest writer in the English language.",
+      image: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Shakespeare.jpg",
+    },
+    {
       name: "Chinua Achebe",
       years: "1930-2013",
-      bio: "Nigerian novelist, poet, and critic who is regarded as the dominant figure of modern African literature. His first novel, Things Fall Apart (1958), is the most widely read book in modern African literature.",
-      notableWorks: ["Things Fall Apart", "No Longer at Ease", "Arrow of God"],
-      imageUrl: "/placeholder.svg?height=300&width=400&text=Chinua+Achebe",
-      likes: 245,
-      liked: false,
-      comments: 32,
+      nationality: "Nigerian",
+      bio: "Nigerian novelist, poet, and critic regarded as the dominant figure of modern African literature.",
+      image: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Chinua_Achebe_-_Buffalo_25Sep2008.jpg",
     },
     {
-      id: "2",
-      name: "Chimamanda Ngozi Adichie",
-      years: "1977-present",
-      bio: "Nigerian writer whose works range from novels to short stories to nonfiction. She is known for her feminism and her exploration of the African diaspora.",
-      notableWorks: ["Purple Hibiscus", "Half of a Yellow Sun", "Americanah"],
-      imageUrl: "/placeholder.svg?height=300&width=400&text=Chimamanda+Ngozi+Adichie",
-      likes: 312,
-      liked: false,
-      comments: 47,
+      name: "Maya Angelou",
+      years: "1928-2014",
+      nationality: "American",
+      bio: "American poet, memoirist, and civil rights activist known for her autobiographical works.",
+      image: "https://upload.wikimedia.org/wikipedia/commons/b/be/Maya_Angelou_visits_YCP_College_%28cropped%29.jpg",
     },
     {
-      id: "3",
-      name: "Wole Soyinka",
-      years: "1934-present",
-      bio: "Nigerian playwright, novelist, poet, and essayist who was awarded the 1986 Nobel Prize in Literature, the first African to be honored in that category.",
-      notableWorks: ["Death and the King's Horseman", "The Lion and the Jewel", "Aké: The Years of Childhood"],
-      imageUrl: "/placeholder.svg?height=300&width=400&text=Wole+Soyinka",
-      likes: 189,
-      liked: false,
-      comments: 28,
+      name: "Gabriel García Márquez",
+      years: "1927-2014",
+      nationality: "Colombian",
+      bio: "Colombian novelist and journalist, known for popularizing magical realism.",
+      image: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Gabriel_Garcia_Marquez.jpg",
     },
-    {
-      id: "4",
-      name: "Ben Okri",
-      years: "1959-present",
-      bio: "Nigerian poet and novelist who is one of the foremost African authors in the post-modern and post-colonial traditions, and has been compared favorably to authors such as Salman Rushdie and Gabriel García Márquez.",
-      notableWorks: ["The Famished Road", "Songs of Enchantment", "Infinite Riches"],
-      imageUrl: "/placeholder.svg?height=300&width=400&text=Ben+Okri",
-      likes: 156,
-      liked: false,
-      comments: 19,
-    },
-  ])
-
-  const handleLike = (id: string) => {
-    setWriters((prevWriters) =>
-      prevWriters.map((writer) => {
-        if (writer.id === id) {
-          return {
-            ...writer,
-            likes: writer.liked ? writer.likes - 1 : writer.likes + 1,
-            liked: !writer.liked,
-          }
-        }
-        return writer
-      }),
-    )
-  }
+  ]
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
-      <main className="flex-grow bg-gradient-to-b from-indigo-50 to-pink-50">
-        <div className="container mx-auto px-4 py-12">
-          <h1 className="text-4xl font-bold mb-8 text-center text-purple-700">Famous Writers</h1>
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 to-blue-900">
+      {/* Header */}
+      <header className="p-6 border-b border-white/20">
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
+          <a href="/" className="text-2xl font-bold text-white">
+            WRITERS
+          </a>
+          <nav className="hidden md:flex space-x-6">
+            <a href="/" className="text-white hover:text-purple-300">
+              Home
+            </a>
+            <a href="/writers" className="text-purple-300">
+              Writers
+            </a>
+            <a href="/poetry" className="text-white hover:text-purple-300">
+              Poetry
+            </a>
+            <a href="/videos" className="text-white hover:text-purple-300">
+              Videos
+            </a>
+          </nav>
+        </div>
+      </header>
 
-          <div className="max-w-4xl mx-auto">
-            <p className="text-xl text-center mb-12 text-gray-700">
-              Discover the literary giants whose words have shaped cultures, challenged perspectives, and stood the test
-              of time
-            </p>
+      <main className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-5xl font-bold text-center bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-8">
+            Literary Masters
+          </h1>
+          <p className="text-xl text-center text-gray-300 mb-12 max-w-3xl mx-auto">
+            Discover the greatest writers who have shaped human thought and literature across cultures and centuries.
+          </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              {writers.map((writer) => (
-                <div
-                  key={writer.id}
-                  className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:-translate-y-1 duration-300"
-                >
-                  <div className="relative h-64">
-                    <Image
-                      src={writer.imageUrl || "/placeholder.svg"}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            {writers.map((writer, index) => (
+              <div
+                key={index}
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:border-white/30 transition-all"
+              >
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-purple-400 mb-6">
+                    <img
+                      src={writer.image || "/placeholder.svg"}
                       alt={writer.name}
-                      fill
-                      className="object-cover"
+                      className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="p-6">
-                    <h2 className="text-2xl font-bold mb-2 text-gray-900">{writer.name}</h2>
-                    <p className="text-gray-600 mb-4">{writer.years}</p>
-                    <p className="text-gray-700 mb-4">{writer.bio}</p>
-                    <p className="text-gray-700 mb-4">
-                      <strong>Notable Works:</strong> {writer.notableWorks.join(", ")}
-                    </p>
-
-                    <div className="flex justify-between items-center">
-                      <a
-                        href={`https://en.wikipedia.org/wiki/${writer.name.replace(/ /g, "_")}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-indigo-600 hover:text-indigo-800"
-                      >
-                        Learn more <ExternalLink className="ml-1" size={14} />
-                      </a>
-
-                      <div className="flex items-center space-x-4">
-                        <button
-                          className={`flex items-center ${writer.liked ? "text-red-500" : ""} hover:text-red-500 transition-colors`}
-                          onClick={() => handleLike(writer.id)}
-                        >
-                          <Heart size={18} className="mr-1" fill={writer.liked ? "currentColor" : "none"} />
-                          <span>{writer.likes}</span>
-                        </button>
-                        <div className="flex items-center text-gray-500">
-                          <MessageSquare size={18} className="mr-1" />
-                          <span>{writer.comments}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">{writer.name}</h3>
+                  <p className="text-purple-300 mb-2">{writer.years}</p>
+                  <p className="text-gray-300 mb-4">{writer.nationality}</p>
+                  <p className="text-gray-300 leading-relaxed">{writer.bio}</p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   )
 }
